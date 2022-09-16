@@ -30,17 +30,8 @@ public class getTruthOrDare extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		TruthOrDare selection;
-		// Determines if user selected truth or dare
-		if (request.getParameter("truth") != null) {
-			String prompt = TruthOrDare.getRandomTruth();
-			selection = new TruthOrDare(prompt);
-
-		} else {
-			String prompt = TruthOrDare.getRandomDare();
-			selection = new TruthOrDare(prompt);
-
-		}
+		String truthOrDare = request.getParameter("truth");
+		TruthOrDare selection = new TruthOrDare(truthOrDare);
 		request.setAttribute("selection", selection);
 		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
 	}

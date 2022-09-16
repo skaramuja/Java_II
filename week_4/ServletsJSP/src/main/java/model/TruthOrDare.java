@@ -10,16 +10,22 @@ public class TruthOrDare {
 	 * Default constructor with no parameters
 	 */
 	public TruthOrDare() {
+
 	}
 
 	/**
-	 * Constructor with prompt as parameter 
+	 * Constructor with prompt as parameter, determines if user selected truth or
+	 * dare
 	 * @param prompt user selection if truth or dare
 	 */
 	public TruthOrDare(String prompt) {
-		setPrompt(prompt);
-	}
+		if (prompt != null) {
+			setPrompt(TruthOrDare.getRandomTruth());
 
+		} else {
+			setPrompt(TruthOrDare.getRandomDare());
+		}
+	}
 
 	/**
 	 * Getter for prompt
