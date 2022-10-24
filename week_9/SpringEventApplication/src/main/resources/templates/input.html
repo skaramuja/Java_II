@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Concert</title>
+</head>
+<body>
+	<form th:object="${newConcert}" th:action="@{/update/{id}(id=${newConcert.id})}" method=POST>
+		Artist: <input name="artist" size="20" th:field="*{artist}"> <br />
+		Date: <input name="date" size="10" th:field="*{date}"><br /> 	
+		Time: <input name="time" size="20" th:field="*{time}"><br /> 
+		Venue Name: <input name="venue.name" size="20" th:field="*{venue.name}"><br />
+		Street: <input name="venue.street" size="20" th:field="*{venue.street}"><br /> 
+		City: <input name="venue.city" size="20" th:field="*{venue.city}"><br /> 
+		State:<input name="venue.state" size="20" th:field="*{venue.state}"><br /> 
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="../viewAll">View all Concerts</a>
+</body>
+</html>

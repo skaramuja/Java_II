@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Concerts</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentConcert : ${concert}">
+				<td th:text="${currentConcert.id}" />
+				<td th:text="${currentConcert.artist}" />
+				<td th:text="${currentConcert.date}" />
+				<td th:text="${currentConcert.time}" />
+				<td th:text="${currentConcert.venue.name}" />
+				<td th:text="${currentConcert.venue.street}" />
+				<td th:text="${currentConcert.venue.city}" />
+				<td th:text="${currentConcert.venue.state}" />
+				<td><a th:href="@{/edit/{id}(id=${currentConcert.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentConcert.id})}">Delete</a></td>
+			</tr>
+		</table>
+
+	</form>
+	<a href="../inputConcert">Add a new concert</a>
+</body>
+</html>
