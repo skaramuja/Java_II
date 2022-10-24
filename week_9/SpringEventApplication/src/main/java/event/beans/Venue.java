@@ -2,6 +2,11 @@ package event.beans;
 
 import javax.persistence.Embeddable;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @Embeddable
 public class Venue {
 	private String name;
@@ -9,12 +14,6 @@ public class Venue {
 	private String state;
 	private String city;
 	
-	/**
-	 * Default constructor with no parameters
-	 */
-	public Venue() {
-		
-	}
 	
 	/**
 	 * Constructor that takes name, street, state and city
@@ -29,62 +28,6 @@ public class Venue {
 		setState(state);
 		setCity(city);
 	}	
-	
-	/**
-	 * Getter for name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * Setter for name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * Getter for street
-	 */
-	public String getStreet() {
-		return street;
-	}
-
-	/**
-	 * Setter for street
-	 */
-	public void setStreet(String street) {
-		this.street = street;
-	}
-
-	/**
-	 * Getter for state
-	 */
-	public String getState() {
-		return state;
-	}
-
-	/**
-	 * Setter for state
-	 */
-	public void setState(String state) {
-		this.state = state;
-	}
-
-	/**
-	 * Getter for city
-	 */
-	public String getCity() {
-		return city;
-	}
-
-	/**
-	 * Setter for city
-	 */
-	public void setCity(String city) {
-		this.city = city;
-	}
 
 	@Override
 	public String toString() {

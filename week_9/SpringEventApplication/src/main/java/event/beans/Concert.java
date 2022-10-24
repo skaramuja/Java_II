@@ -10,6 +10,11 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "my_events")
 public class Concert {
@@ -22,13 +27,6 @@ public class Concert {
 
 	@Autowired
 	private Venue venue;
-
-	/**
-	 * Default constructor with no parameters
-	 */
-	public Concert() {
-
-	}
 
 	/**
 	 * Constructor that takes all parameters
@@ -54,76 +52,6 @@ public class Concert {
 		setArtist(artist);
 		setDate(date);
 		setTime(time);
-	}
-
-	/**
-	 * Getter for ID
-	 */
-	public long getId() {
-		return id;
-	}
-
-	/**
-	 * Setter for ID
-	 */
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	/**
-	 * Getter for artist
-	 */
-	public String getArtist() {
-		return artist;
-	}
-
-	/**
-	 * Setter for artist
-	 */
-	public void setArtist(String artist) {
-		this.artist = artist;
-	}
-
-	/**
-	 * Getter for date
-	 */
-	public LocalDate getDate() {
-		return date;
-	}
-
-	/**
-	 * Setter for date
-	 */
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
-	/**
-	 * Getter for time
-	 */
-	public LocalTime getTime() {
-		return time;
-	}
-
-	/**
-	 * Setter for time
-	 */
-	public void setTime(LocalTime time) {
-		this.time = time;
-	}
-	
-	/**
-	 * Getter for venue
-	 */
-	public Venue getVenue() {
-		return venue;
-	}
-
-	/**
-	 * Setter for venue
-	 */
-	public void setVenue(Venue venue) {
-		this.venue = venue;
 	}
 
 	@Override
